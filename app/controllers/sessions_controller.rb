@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
       flash[:alert] = "You need to sign up!"
       render :new
     end
+    
   end
 
   def destroy

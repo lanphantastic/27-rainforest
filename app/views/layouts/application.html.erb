@@ -21,8 +21,20 @@
               </ul>
             </nav>
         </header>
+<%
+  def user_is_logged_in
+    true
+  end
+  %>
 
-        <% if flash[:notice] %>
+<% if user_is_logged_in %>
+    <p><%= link_to "Logout", sessions_path %></p>
+    <p>You have x credits</p>
+    <% else %>
+      please login to see your balance.
+  <% end %>
+
+    <% if flash[:notice] %>
       <p class="notice"><%= flash[:notice] %></p>
     <% end %>
     <% if flash[:alert] %>
