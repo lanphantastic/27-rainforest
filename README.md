@@ -25,29 +25,29 @@ Things you may want to cover:
 
 ### Background knowledge:
 
-MVC fundamentals
-routing fundamentals
-database relationships
+* MVC fundamentals
+* routing fundamentals
+* database relationships
 
 ### Learning Goals (new):
 
-Routes
-Nested resources
-Views
-forms for nested resources
-Associations
-has_many
-belongs_to
+* Routes
+* Nested resources
+* Views
+* forms for nested resources
+* Associations
+* has_many
+* belongs_to
 
 ### Learning Goals (reinforcing):
 
-view helpers
-partials
-redirecting
-validations
-migrations
-path helpers
-flash notices
+* view helpers
+* partials
+* redirecting
+* validations
+* migrations
+* path helpers
+* flash notices
 
 ## User stories
 
