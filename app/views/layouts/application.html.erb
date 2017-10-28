@@ -21,13 +21,8 @@
               </ul>
             </nav>
         </header>
-<%
-  def user_is_logged_in
-    true
-  end
-  %>
 
-<% if user_is_logged_in %>
+<% if session[:user_id] %>
     <p><%= link_to "Logout", sessions_path %></p>
     <p>You have x credits</p>
     <% else %>
