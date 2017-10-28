@@ -1,5 +1,9 @@
 class ProductsController < ApplicationController
 
+  # Preloading the find_product method (at the bottom) for ONLY the following methods:
+  before_action :find_product, only: [:edit, :show, :update, :destroy]
+  before_action :new_product, only: [:create, :new]
+
   def index
     @products = Product.all
   end
@@ -58,6 +62,14 @@ class ProductsController < ApplicationController
       render :show
     end
 
+  end
+
+  def find_product
+    @product = Product.find(params[:id])
+  end
+
+  def new_product
+    @product = Product.new
   end
 
 end
