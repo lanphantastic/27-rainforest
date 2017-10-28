@@ -16,17 +16,19 @@
                 <li><%= link_to("Home", root_url)                  %></li>
                 <li><%= link_to("All Products", products_path)     %></li>
                 <li><%= link_to("Add a Product", new_product_path) %></li>
-                <li><%= link_to("New User", new_users_path)        %></li>
-                <li><%= link_to("Login", new_sessions_path)                 %></li>
               </ul>
             </nav>
         </header>
 
+
 <% if session[:user_id] %>
-    <p><%= link_to "Logout", sessions_path %></p>
-    <p>You have x credits</p>
+    <p>
+      <%= link_to "Home", root_url %> |
+    <%= link_to "Logout", sessions_path, method: :delete %></p>
+    <p>Hello <%= @user.email %></p>
     <% else %>
-      please login to see your balance.
+      <%= link_to("New User", new_users_path)%>
+      <%= link_to("Login", new_sessions_path)%>
   <% end %>
 
     <% if flash[:notice] %>
