@@ -2,8 +2,11 @@
 
 <ul>
 <% @products.each do |product| %>
-  <li><%= product.name%> </li>
-  <li><%= product.description %></li>
-  <li><%= product.price_in_cents %></li>
+  <li>
+    <%= link_to product.name, product_path(product)%>
+    <br>
+    <%= product.description %>
+    <br>
+    <%= product.price_in_cents %></li>
 <% end %>
 </ul>
