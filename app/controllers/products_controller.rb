@@ -19,6 +19,13 @@ class ProductsController < ApplicationController
     @product.description = params[:product][:description]
     @product.price_in_cents = params[:product][:price_in_cents]
 
+    if @product.save
+      flash[:notice] = "Product has been successfully created."
+      redirect_to product_path(@product)
+    else
+      render :new
+    end
+
   end
 
   def edit
