@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root "products#index"
 
   resource :users, only: %i(create new)
-  resource :sessions, ony %i(create new destroy)
+  resource :sessions, only: %i(create new destroy)
   resources :products do
     resources :reviews, except: [:index, :new, :show]
   end
