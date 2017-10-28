@@ -11,24 +11,12 @@
   <body>
     <header>
       <h1>Rainforest</h1>
+      <%= link_to "Home", root_url %>
     </header>
-<%
-  def current_user
-    if session[:user_id]
-      u = User.find(session[:user_id])
-    end
 
-    if u
-      u
-    else
-      false
-    end
-  end
-%>
 
 <% if current_user %>
   <p>
-    <%= link_to "Home", root_url %> |
     <%= link_to("Add a Product", new_product_path) %> |
     <%= link_to "Logout", sessions_path, method: :delete %>
   </p>
