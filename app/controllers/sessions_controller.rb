@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = u.id
       redirect_to root_url
     else
-      flash[:alert] = "You need to sign up!"
+      flash.now[:alert] = ["Login failsed, name and/or password are incorrect"]
       render :new
     end
 
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   def destroy
     # take off the wristband
     session[:user_id] = nil
-    
+
     redirect_to root_url
   end
 end
